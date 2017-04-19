@@ -56,6 +56,15 @@
 
         <li>
 
+            <a class="apidocElementLiA" href="#apidoc.element.regenerator.regenerator">
+            function <span class="apidocSignatureSpan"></span>regenerator
+            <span class="apidocSignatureSpan">(file, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
             <a class="apidocElementLiA" href="#apidoc.element.regenerator.compile">
             function <span class="apidocSignatureSpan">regenerator.</span>compile
             <span class="apidocSignatureSpan">(source, options)</span>
@@ -128,12 +137,6 @@
 
         <li>
 
-            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">regenerator.</span>runtime_module</span>
-
-        </li>
-
-        <li>
-
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">regenerator.</span>types</span>
 
         </li>
@@ -182,12 +185,12 @@
 
     </ol></li>
 
-    <li class="apidocModuleLi"><a href="#apidoc.module.regenerator.runtime_module">module regenerator.runtime_module</a><ol>
+    <li class="apidocModuleLi"><a href="#apidoc.module.regenerator.runtime">module regenerator.runtime</a><ol>
 
         <li>
 
-            <a class="apidocElementLiA" href="#apidoc.element.regenerator.runtime_module.AsyncIterator">
-            function <span class="apidocSignatureSpan">regenerator.runtime_module.</span>AsyncIterator
+            <a class="apidocElementLiA" href="#apidoc.element.regenerator.runtime.AsyncIterator">
+            function <span class="apidocSignatureSpan">regenerator.runtime.</span>AsyncIterator
             <span class="apidocSignatureSpan">(generator)</span>
             </a>
 
@@ -195,8 +198,8 @@
 
         <li>
 
-            <a class="apidocElementLiA" href="#apidoc.element.regenerator.runtime_module.async">
-            function <span class="apidocSignatureSpan">regenerator.runtime_module.</span>async
+            <a class="apidocElementLiA" href="#apidoc.element.regenerator.runtime.async">
+            function <span class="apidocSignatureSpan">regenerator.runtime.</span>async
             <span class="apidocSignatureSpan">(innerFn, outerFn, self, tryLocsList)</span>
             </a>
 
@@ -204,8 +207,8 @@
 
         <li>
 
-            <a class="apidocElementLiA" href="#apidoc.element.regenerator.runtime_module.awrap">
-            function <span class="apidocSignatureSpan">regenerator.runtime_module.</span>awrap
+            <a class="apidocElementLiA" href="#apidoc.element.regenerator.runtime.awrap">
+            function <span class="apidocSignatureSpan">regenerator.runtime.</span>awrap
             <span class="apidocSignatureSpan">(arg)</span>
             </a>
 
@@ -213,8 +216,8 @@
 
         <li>
 
-            <a class="apidocElementLiA" href="#apidoc.element.regenerator.runtime_module.isGeneratorFunction">
-            function <span class="apidocSignatureSpan">regenerator.runtime_module.</span>isGeneratorFunction
+            <a class="apidocElementLiA" href="#apidoc.element.regenerator.runtime.isGeneratorFunction">
+            function <span class="apidocSignatureSpan">regenerator.runtime.</span>isGeneratorFunction
             <span class="apidocSignatureSpan">(genFun)</span>
             </a>
 
@@ -222,8 +225,8 @@
 
         <li>
 
-            <a class="apidocElementLiA" href="#apidoc.element.regenerator.runtime_module.keys">
-            function <span class="apidocSignatureSpan">regenerator.runtime_module.</span>keys
+            <a class="apidocElementLiA" href="#apidoc.element.regenerator.runtime.keys">
+            function <span class="apidocSignatureSpan">regenerator.runtime.</span>keys
             <span class="apidocSignatureSpan">(object)</span>
             </a>
 
@@ -231,8 +234,8 @@
 
         <li>
 
-            <a class="apidocElementLiA" href="#apidoc.element.regenerator.runtime_module.mark">
-            function <span class="apidocSignatureSpan">regenerator.runtime_module.</span>mark
+            <a class="apidocElementLiA" href="#apidoc.element.regenerator.runtime.mark">
+            function <span class="apidocSignatureSpan">regenerator.runtime.</span>mark
             <span class="apidocSignatureSpan">(genFun)</span>
             </a>
 
@@ -240,8 +243,8 @@
 
         <li>
 
-            <a class="apidocElementLiA" href="#apidoc.element.regenerator.runtime_module.values">
-            function <span class="apidocSignatureSpan">regenerator.runtime_module.</span>values
+            <a class="apidocElementLiA" href="#apidoc.element.regenerator.runtime.values">
+            function <span class="apidocSignatureSpan">regenerator.runtime.</span>values
             <span class="apidocSignatureSpan">(iterable)</span>
             </a>
 
@@ -249,8 +252,8 @@
 
         <li>
 
-            <a class="apidocElementLiA" href="#apidoc.element.regenerator.runtime_module.wrap">
-            function <span class="apidocSignatureSpan">regenerator.runtime_module.</span>wrap
+            <a class="apidocElementLiA" href="#apidoc.element.regenerator.runtime.wrap">
+            function <span class="apidocSignatureSpan">regenerator.runtime.</span>wrap
             <span class="apidocSignatureSpan">(innerFn, outerFn, self, tryLocsList)</span>
             </a>
 
@@ -2828,6 +2831,33 @@
 
 
     <h2>
+        <a href="#apidoc.element.regenerator.regenerator" id="apidoc.element.regenerator.regenerator">
+        function <span class="apidocSignatureSpan"></span>regenerator
+        <span class="apidocSignatureSpan">(file, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function exports(file, options) {
+  var data = [];
+  return through(write, end);
+
+  function write(buf) {
+    data.push(buf);
+  }
+
+  function end() {
+    try {
+      this.queue(compile(data.join(""), options).code);
+      this.queue(null);
+    } catch (e) { this.emit('error', e); }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
         <a href="#apidoc.element.regenerator.compile" id="apidoc.element.regenerator.compile">
         function <span class="apidocSignatureSpan">regenerator.</span>compile
         <span class="apidocSignatureSpan">(source, options)</span>
@@ -3124,17 +3154,15 @@ The easiest way to get involved is to look for buggy examples using [the
 
 
 
-
-
 </div>
 
 <div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.regenerator.runtime_module" id="apidoc.module.regenerator.runtime_module">module regenerator.runtime_module</a></h1>
+<h1><a href="#apidoc.module.regenerator.runtime" id="apidoc.module.regenerator.runtime">module regenerator.runtime</a></h1>
 
 
     <h2>
-        <a href="#apidoc.element.regenerator.runtime_module.AsyncIterator" id="apidoc.element.regenerator.runtime_module.AsyncIterator">
-        function <span class="apidocSignatureSpan">regenerator.runtime_module.</span>AsyncIterator
+        <a href="#apidoc.element.regenerator.runtime.AsyncIterator" id="apidoc.element.regenerator.runtime.AsyncIterator">
+        function <span class="apidocSignatureSpan">regenerator.runtime.</span>AsyncIterator
         <span class="apidocSignatureSpan">(generator)</span>
         </a>
     </h2>
@@ -3223,8 +3251,8 @@ The easiest way to get involved is to look for buggy examples using [the
 
 
     <h2>
-        <a href="#apidoc.element.regenerator.runtime_module.async" id="apidoc.element.regenerator.runtime_module.async">
-        function <span class="apidocSignatureSpan">regenerator.runtime_module.</span>async
+        <a href="#apidoc.element.regenerator.runtime.async" id="apidoc.element.regenerator.runtime.async">
+        function <span class="apidocSignatureSpan">regenerator.runtime.</span>async
         <span class="apidocSignatureSpan">(innerFn, outerFn, self, tryLocsList)</span>
         </a>
     </h2>
@@ -3246,8 +3274,8 @@ The easiest way to get involved is to look for buggy examples using [the
 
 
     <h2>
-        <a href="#apidoc.element.regenerator.runtime_module.awrap" id="apidoc.element.regenerator.runtime_module.awrap">
-        function <span class="apidocSignatureSpan">regenerator.runtime_module.</span>awrap
+        <a href="#apidoc.element.regenerator.runtime.awrap" id="apidoc.element.regenerator.runtime.awrap">
+        function <span class="apidocSignatureSpan">regenerator.runtime.</span>awrap
         <span class="apidocSignatureSpan">(arg)</span>
         </a>
     </h2>
@@ -3261,8 +3289,8 @@ The easiest way to get involved is to look for buggy examples using [the
 
 
     <h2>
-        <a href="#apidoc.element.regenerator.runtime_module.isGeneratorFunction" id="apidoc.element.regenerator.runtime_module.isGeneratorFunction">
-        function <span class="apidocSignatureSpan">regenerator.runtime_module.</span>isGeneratorFunction
+        <a href="#apidoc.element.regenerator.runtime.isGeneratorFunction" id="apidoc.element.regenerator.runtime.isGeneratorFunction">
+        function <span class="apidocSignatureSpan">regenerator.runtime.</span>isGeneratorFunction
         <span class="apidocSignatureSpan">(genFun)</span>
         </a>
     </h2>
@@ -3282,8 +3310,8 @@ The easiest way to get involved is to look for buggy examples using [the
 
 
     <h2>
-        <a href="#apidoc.element.regenerator.runtime_module.keys" id="apidoc.element.regenerator.runtime_module.keys">
-        function <span class="apidocSignatureSpan">regenerator.runtime_module.</span>keys
+        <a href="#apidoc.element.regenerator.runtime.keys" id="apidoc.element.regenerator.runtime.keys">
+        function <span class="apidocSignatureSpan">regenerator.runtime.</span>keys
         <span class="apidocSignatureSpan">(object)</span>
         </a>
     </h2>
@@ -3320,8 +3348,8 @@ The easiest way to get involved is to look for buggy examples using [the
 
 
     <h2>
-        <a href="#apidoc.element.regenerator.runtime_module.mark" id="apidoc.element.regenerator.runtime_module.mark">
-        function <span class="apidocSignatureSpan">regenerator.runtime_module.</span>mark
+        <a href="#apidoc.element.regenerator.runtime.mark" id="apidoc.element.regenerator.runtime.mark">
+        function <span class="apidocSignatureSpan">regenerator.runtime.</span>mark
         <span class="apidocSignatureSpan">(genFun)</span>
         </a>
     </h2>
@@ -3344,8 +3372,8 @@ The easiest way to get involved is to look for buggy examples using [the
 
 
     <h2>
-        <a href="#apidoc.element.regenerator.runtime_module.values" id="apidoc.element.regenerator.runtime_module.values">
-        function <span class="apidocSignatureSpan">regenerator.runtime_module.</span>values
+        <a href="#apidoc.element.regenerator.runtime.values" id="apidoc.element.regenerator.runtime.values">
+        function <span class="apidocSignatureSpan">regenerator.runtime.</span>values
         <span class="apidocSignatureSpan">(iterable)</span>
         </a>
     </h2>
@@ -3390,8 +3418,8 @@ The easiest way to get involved is to look for buggy examples using [the
 
 
     <h2>
-        <a href="#apidoc.element.regenerator.runtime_module.wrap" id="apidoc.element.regenerator.runtime_module.wrap">
-        function <span class="apidocSignatureSpan">regenerator.runtime_module.</span>wrap
+        <a href="#apidoc.element.regenerator.runtime.wrap" id="apidoc.element.regenerator.runtime.wrap">
+        function <span class="apidocSignatureSpan">regenerator.runtime.</span>wrap
         <span class="apidocSignatureSpan">(innerFn, outerFn, self, tryLocsList)</span>
         </a>
     </h2>
